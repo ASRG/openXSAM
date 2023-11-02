@@ -1,0 +1,1402 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SystemChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Function" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SubFunctions">
+                      <xs:complexType mixed="true">
+                        <xs:sequence>
+                          <xs:element name="Function" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="SubFunctions"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="description"/>
+                              <xs:attribute type="xs:string" name="name"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description" use="optional"/>
+                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                  <xs:attribute type="xs:string" name="title" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SystemChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Data">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="SubData"/>
+                    <xs:element name="AssignedFunctions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FunctionAssignment">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="isLockedAssigned"/>
+                                  <xs:attribute type="xs:string" name="isLockedDeassigned"/>
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SystemChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Component">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Technologies"/>
+                    <xs:element type="xs:string" name="StoredData"/>
+                    <xs:element name="SubComponents">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Component">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Technologies">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="TechnologyRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="StoredData">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DataRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element type="xs:string" name="SubComponents"/>
+                                <xs:element type="xs:string" name="AssignedFunctions"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="description"/>
+                              <xs:attribute type="xs:string" name="id"/>
+                              <xs:attribute type="xs:string" name="name"/>
+                              <xs:attribute type="xs:string" name="title"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="AssignedFunctions"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SystemChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Channel">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Endpoints">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ComponentRef" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                  <xs:attribute type="xs:string" name="target" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Technologies">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TechnologyRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DataFlows">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DataFlow">
+                            <xs:complexType>
+                              <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                <xs:element type="xs:string" name="Technologies"/>
+                                <xs:element name="TransferredData">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:element name="DataRef" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="AssignedFunctions">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="FunctionAssignment" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="isLockedAssigned" use="optional"/>
+                                              <xs:attribute type="xs:string" name="isLockedDeassigned" use="optional"/>
+                                              <xs:attribute type="xs:string" name="target" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                              <xs:attribute type="xs:string" name="dataFlowTarget"/>
+                              <xs:attribute type="xs:string" name="dataflowSource"/>
+                              <xs:attribute type="xs:string" name="description"/>
+                              <xs:attribute type="xs:string" name="id"/>
+                              <xs:attribute type="xs:string" name="name"/>
+                              <xs:attribute type="xs:string" name="title"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AssignedFunctions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FunctionAssignment" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="isLockedAssigned" use="optional"/>
+                                  <xs:attribute type="xs:string" name="isLockedDeassigned" use="optional"/>
+                                  <xs:attribute type="xs:string" name="target" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Assumption">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="MaxRL">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RiskLevelRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MaxIL">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ImpactLevelRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MaxAFL">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="AttackFeasibilityLevelRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Effects">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TransformDamageScenario">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Source">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DamageScenarioRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="damageScenario"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Target">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DamageScenarioRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="damageScenario"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TransformImpactOption">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Source">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactOptionRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Target">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactOptionRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="RemoveAllDamage"/>
+                          <xs:element name="RemoveImpactOption">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Option">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactOptionRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="RemoveDamageScenario">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Scenario">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DamageScenarioRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="damageScenario"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="InstantiatedClasses">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="AssumptionClassRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ThreatScenario">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CauseOfCompromise">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ThreatClassRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ActedOnTOEEs">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ChannelRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="CustomImpactCombinator"/>
+                    <xs:element type="xs:string" name="CustomFeasibilityCombinator"/>
+                    <xs:element name="DamageScenarios">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DamageScenarioRef" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="damageScenario" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Compromises">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="DeriveCompromisedAssets"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="threatenedBy"/>
+                  <xs:attribute type="xs:string" name="lessenedBy"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DamageScenario">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ImpactRatings">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ImpactTuple" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ImpactRating">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactRating">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="option" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="impactCategory" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ConcernedAssets">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="QualifiedAssetList">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="QualifiedAssets">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="QualifiedAsset">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="CsProperty">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="CSPropertyRef">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="target"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Toee">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="FunctionRef">
+                                                    <xs:complexType>
+                                                      <xs:simpleContent>
+                                                        <xs:extension base="xs:string">
+                                                          <xs:attribute type="xs:string" name="target"/>
+                                                        </xs:extension>
+                                                      </xs:simpleContent>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="Scale"/>
+                    <xs:element type="xs:string" name="Todos"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="normalBehavior"/>
+                  <xs:attribute type="xs:string" name="operationalSituation"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AttackStep">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InstantiatedClass">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ThreatClassRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ActedOnTOEEs">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ChannelRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="InitialFeasibilityOptions"/>
+                    <xs:element type="xs:string" name="ConsecutiveFeasibilityOptions"/>
+                    <xs:element type="xs:string" name="ExplicitInitialFeasibility"/>
+                    <xs:element type="xs:string" name="ExplicitConsecutiveFeasibility"/>
+                    <xs:element type="xs:string" name="CustomImpactCombinator"/>
+                    <xs:element type="xs:string" name="CustomFeasibilityCombinator"/>
+                    <xs:element type="xs:string" name="FeasibilityModel"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="mitigatedBy"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="refinedBy"/>
+                  <xs:attribute type="xs:byte" name="riskLevel"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Control">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="InstantiatedControlClass">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SecurityControlClassRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="ControlGroups"/>
+                    <xs:element type="xs:string" name="InitialFeasibilityOptions"/>
+                    <xs:element type="xs:string" name="ConsecutiveFeasibilityOptions"/>
+                    <xs:element type="xs:string" name="InitialExplicitFeasibility"/>
+                    <xs:element type="xs:string" name="ConsecutiveExplicitFeasibility"/>
+                    <xs:element type="xs:string" name="ActedOnTOEEs"/>
+                    <xs:element name="Effects">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TransformDamageScenario">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Source">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DamageScenarioRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="damageScenario"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Target">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DamageScenarioRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="damageScenario"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="TransformImpactOption">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Source">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactOptionRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Target">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactOptionRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="RemoveAllDamage"/>
+                          <xs:element name="RemoveImpactOption">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Option">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ImpactOptionRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="target"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="RemoveDamageScenario">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Scenario">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="DamageScenarioRef">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:string" name="damageScenario"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="CustomImpactCombinator"/>
+                    <xs:element type="xs:string" name="CustomFeasibilityCombinator"/>
+                    <xs:element type="xs:string" name="FeasibilityModel"/>
+                    <xs:element type="xs:string" name="Todos"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="dependsOn"/>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Scenario" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Controls">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SecurityControlSelector" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="AllControls" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description" use="optional"/>
+                  <xs:attribute type="xs:string" name="isDefault" use="optional"/>
+                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                  <xs:attribute type="xs:string" name="title" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SecurityChunk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Risk">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CausedByElements">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ThreatScenarioRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ThreatsCatalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ThreatClasses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ThreatClass">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ThreatenedSecurityProperties">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CSPropertyRef" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Architecture">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="DataFlowSecurityTarget"/>
+                          <xs:element type="xs:string" name="ChannelSecurityTarget"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="InitialFeasibilityOptions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FeasibilityRating" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="category" use="optional"/>
+                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                  <xs:attribute type="xs:string" name="option" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="ConsecutiveFeasibilityOptions"/>
+                    <xs:element name="Technologies">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TechnologyRef">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id"/>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="title"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RiskModel">
+    <xs:complexType>      
+        <xs:element name="RiskLevels">
+          <xs:complexType>            
+              <xs:element name="RiskLevelsDefinition">
+                <xs:complexType>                  
+                    <xs:element name="Levels">
+                      <xs:complexType>                        
+                          <xs:element name="RiskLevel" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="color"/>
+                                  <xs:attribute type="xs:string" name="description"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                  <xs:attribute type="xs:byte" name="name" use="required"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RiskTable">
+          <xs:complexType>            
+              <xs:element name="RiskEvaluationTable">
+                <xs:complexType>                  
+                    <xs:element name="Cells">
+                      <xs:complexType>                        
+                          <xs:element name="RiskEvaluationTableEntry" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="feasibilityLevel" use="required"/>
+                                  <xs:attribute type="xs:string" name="impactLevel" use="required"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                  <xs:attribute type="xs:string" name="resultingRiskLevel" use="required"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RiskTreatments">
+          <xs:complexType>            
+              <xs:element name="RiskTreatmentsDefinition">
+                <xs:complexType>                  
+                    <xs:element name="Treatments">
+                      <xs:complexType>                        
+                          <xs:element name="RiskTreatment" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="description" use="optional"/>
+                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                                  <xs:attribute type="xs:string" name="title" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>      
+      <xs:attribute type="xs:string" name="name" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ImpactModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CSProperties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CyberSecurityProperty" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description" use="optional"/>
+                      <xs:attribute type="xs:string" name="id" use="optional"/>
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="title" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpactLevels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImpactLevelsDefinition">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Values">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ImpactLevel" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="color" use="optional"/>
+                                  <xs:attribute type="xs:string" name="description" use="optional"/>
+                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                                  <xs:attribute type="xs:string" name="title" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="value" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Stakeholders">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Stakeholder" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description" use="optional"/>
+                      <xs:attribute type="xs:string" name="id" use="optional"/>
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="title" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpactCategories">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImpactCategory" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description" use="optional"/>
+                      <xs:attribute type="xs:string" name="hidden" use="optional"/>
+                      <xs:attribute type="xs:string" name="id" use="optional"/>
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="title" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpactOptionLists">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ImpactOptionList" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Stakeholders">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="StakeholderReference">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target" use="optional"/>
+                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Criteria">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ImpactOption" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="description" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="impactValue" use="optional"/>
+                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                                  <xs:attribute type="xs:string" name="title" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="description" use="optional"/>
+                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                  <xs:attribute type="xs:string" name="refinedCategory" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ScalingOptions">
+          <xs:complexType>
+              <xs:element name="ImpactScale" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description" use="optional"/>
+                      <xs:attribute type="xs:string" name="id" use="optional"/>
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="title" use="optional"/>
+                      <xs:attribute type="xs:byte" name="value" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name" use="required"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

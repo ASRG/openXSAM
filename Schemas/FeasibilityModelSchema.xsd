@@ -1,0 +1,89 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FeasibilityModel">
+    <xs:complexType>      
+        <xs:element name="Categories">
+          <xs:complexType>            
+              <xs:element name="FeasibilityCategory" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>                  
+                    <xs:element name="Options">
+                      <xs:complexType>                        
+                          <xs:element name="FeasibilityOption" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="description" />
+                                  <xs:attribute type="xs:string" name="id" />
+                                  <xs:attribute type="xs:string" name="name" use="required" />
+                                  <xs:attribute type="xs:string" name="title" />
+                                  <xs:attribute type="xs:string" name="value" use="required" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="description" />
+                  <xs:attribute type="xs:string" name="id" />
+                  <xs:attribute type="xs:string" name="name" use="required" />
+                  <xs:attribute type="xs:string" name="title" />
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FeasibilityLevels">
+          <xs:complexType>            
+              <xs:element name="AFLsDefinition">
+                <xs:complexType>                  
+                    <xs:element name="Values">
+                      <xs:complexType>                        
+                          <xs:element name="AttackFeasibilityLevel" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="color" />
+                                  <xs:attribute type="xs:string" name="description" />
+                                  <xs:attribute type="xs:byte" name="minimalValue" use="required" />
+                                  <xs:attribute type="xs:string" name="id" />
+                                  <xs:attribute type="xs:string" name="name" use="required"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FeasibilitiesTable">
+          <xs:complexType>            
+              <xs:element name="AFLTable">
+                <xs:complexType>                  
+                    <xs:element name="Cells">
+                      <xs:complexType>                        
+                          <xs:element name="AFLTableCell" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="consecutiveFeasibility" use="required"/>
+                                  <xs:attribute type="xs:string" name="initialFeasibility" use="required" />
+                                  <xs:attribute type="xs:string" name="id" />
+                                  <xs:attribute type="xs:string" name="resultingFeasibility" use="required"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>      
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name" use="required"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

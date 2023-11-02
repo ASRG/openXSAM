@@ -1,0 +1,145 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ImpactModel">
+    <xs:complexType>      
+        <xs:element name="CSProperties">
+          <xs:complexType>            
+              <xs:element name="CyberSecurityProperty" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description" />
+                      <xs:attribute type="xs:string" name="id"/>
+                      <xs:attribute type="xs:string" name="name" use="string"/>
+                      <xs:attribute type="xs:string" name="title"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpactLevels">
+          <xs:complexType>            
+              <xs:element name="ImpactLevelsDefinition">
+                <xs:complexType>                  
+                    <xs:element name="Values">
+                      <xs:complexType>                        
+                          <xs:element name="ImpactLevel" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="color"/>
+                                  <xs:attribute type="xs:string" name="description"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                  <xs:attribute type="xs:string" name="name" use="required"/>
+                                  <xs:attribute type="xs:string" name="title"/>
+                                  <xs:attribute type="xs:string" name="value" use="required"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Stakeholders">
+          <xs:complexType>            
+              <xs:element name="Stakeholder" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description"/>
+                      <xs:attribute type="xs:string" name="id"/>
+                      <xs:attribute type="xs:string" name="name" use="required"/>
+                      <xs:attribute type="xs:string" name="title"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpactCategories">
+          <xs:complexType>            
+              <xs:element name="ImpactCategory" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description"/>
+                      <xs:attribute type="xs:string" name="hidden" />
+                      <xs:attribute type="xs:string" name="id" use="optional"/>
+                      <xs:attribute type="xs:string" name="name" use="required"/>
+                      <xs:attribute type="xs:string" name="title"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpactOptionLists">
+          <xs:complexType>            
+              <xs:element name="ImpactOptionList" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>                  
+                    <xs:element name="Stakeholders">
+                      <xs:complexType>                        
+                          <xs:element name="StakeholderReference">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="target" use="required"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Criteria">
+                      <xs:complexType>                        
+                          <xs:element name="ImpactOption" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="description" />
+                                  <xs:attribute type="xs:byte" name="impactValue" use="required"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                  <xs:attribute type="xs:string" name="name" use="required"/>
+                                  <xs:attribute type="xs:string" name="title"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="description"/>
+                  <xs:attribute type="xs:string" name="id" />
+                  <xs:attribute type="xs:string" name="name" use="required"/>
+                  <xs:attribute type="xs:string" name="refinedCategory" use="required"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ScalingOptions">
+          <xs:complexType>
+              <xs:element name="ImpactScale" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="description"/>
+                      <xs:attribute type="xs:string" name="id"/>
+                      <xs:attribute type="xs:string" name="name" use="required"/>
+                      <xs:attribute type="xs:string" name="title"/>
+                      <xs:attribute type="xs:string" name="value" use="required"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+      <xs:attribute type="xs:string" name="id"/>
+      <xs:attribute type="xs:string" name="name" use="required"/>
+      <xs:attribute type="xs:string" name="virtualPackage"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

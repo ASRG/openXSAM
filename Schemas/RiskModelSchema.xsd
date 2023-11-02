@@ -1,0 +1,81 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RiskModel">
+    <xs:complexType>      
+        <xs:element name="RiskLevels">
+          <xs:complexType>            
+              <xs:element name="RiskLevelsDefinition">
+                <xs:complexType>                  
+                    <xs:element name="Levels">
+                      <xs:complexType>                        
+                          <xs:element name="RiskLevel" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="color"/>
+                                  <xs:attribute type="xs:string" name="description"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                  <xs:attribute type="xs:string" name="name" use="required" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RiskTable">
+          <xs:complexType>            
+              <xs:element name="RiskEvaluationTable">
+                <xs:complexType>                  
+                    <xs:element name="Cells">
+                      <xs:complexType>                        
+                          <xs:element name="RiskEvaluationTableEntry" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="feasibilityLevel" use="required"/>
+                                  <xs:attribute type="xs:string" name="impactLevel" use="required"/>
+                                  <xs:attribute type="xs:string" name="id"/>
+                                  <xs:attribute type="xs:string" name="resultingRiskLevel" use="required"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RiskTreatments">
+          <xs:complexType>            
+              <xs:element name="RiskTreatmentsDefinition">
+                <xs:complexType>                  
+                    <xs:element name="Treatments">
+                      <xs:complexType>                        
+                          <xs:element name="RiskTreatment" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="description" />
+                                  <xs:attribute type="xs:string" name="id" />
+                                  <xs:attribute type="xs:string" name="name" use="required" />
+                                  <xs:attribute type="xs:string" name="title" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>                        
+                      </xs:complexType>
+                    </xs:element>                  
+                  <xs:attribute type="xs:string" name="id"/>
+                </xs:complexType>
+              </xs:element>            
+          </xs:complexType>
+        </xs:element>      
+      <xs:attribute type="xs:string" name="name" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
